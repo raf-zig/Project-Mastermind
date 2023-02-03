@@ -14,31 +14,46 @@ class CodeBreaker
     @selected_code = selected_code
   end
   
+  @@all_colors = ['p','br','o','g','b','y']
+  
   @@guessed_combinations = []
   @@guessed_combinations2 = []
 
-  @@choosing_a_computer = ['p','br','o','g','b','y'].sample(4)
-    
   def search_for_a_hidden_combination
-    @selected_code.each_with_index do |element, index|
-      if @@choosing_a_computer.include? (element)
-        @@guessed_combinations[index] = element
+    12.times do
+      @choosing_a_computer = @@all_colors.sample(4)
+      @selected_code.each_with_index do |element, index|
+        if @choosing_a_computer.include? (element)
+          @@guessed_combinations[index] = element
+        end
+        if element == @choosing_a_computer[index] 
+          @@guessed_combinations2[index] = element 
+          if @@all_colors.size > 4
+            @@all_colors.delete(element)
+          else
+            @@all_colors.map! {|x| x == element ? '*' : element}
+          end
+        
+        end
       end
-      if element == @@choosing_a_computer[index] #and @selected_code.index(element) == @@choosing_a_computer.index(@@choosing_a_computer[index])
-        @@guessed_combinations2[index] = element 
-      end
+      print "#{@selected_code}\n"
+      print "#{@choosing_a_computer}\n"
+      print "#{@@guessed_combinations2}\n"
     end
-  end   
-   
+  end 
+  
   def debugging
     print "#{@selected_code}\n"
     puts "#{@@choosing_a_computer}\n"
     puts "#{@@guessed_combinations}\n"
     puts "#{@@guessed_combinations2}\n"
+    puts "#{@@all_colors}\n"
     puts @@guessed_combinations.size
   end
   
 end
+
 q = CodeBreaker.new(['br','o','g','b'])
 q.search_for_a_hidden_combination
-puts q.debugging
+ # puts q.debugging
+ 
