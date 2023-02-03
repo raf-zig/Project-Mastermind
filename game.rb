@@ -8,4 +8,11 @@ class CodeMaker
   end
 end
 
+class CodeBreaker
+  def initialize(selected_code)
+    @selected_code = selected_code
+  end
 
+  choosing_a_computer = ['p','br','o','g','b','y'].sample(4)
+  
+end
