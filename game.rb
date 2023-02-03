@@ -15,6 +15,7 @@ class CodeBreaker
   end
   
   @@guessed_combinations = []
+  @@guessed_combinations2 = []
 
   @@choosing_a_computer = ['p','br','o','g','b','y'].sample(4)
     
@@ -23,13 +24,17 @@ class CodeBreaker
       if @@choosing_a_computer.include? (element)
         @@guessed_combinations[index] = element
       end
+      if element == @@choosing_a_computer[index] #and @selected_code.index(element) == @@choosing_a_computer.index(@@choosing_a_computer[index])
+        @@guessed_combinations2[index] = element 
+      end
     end
   end   
    
   def debugging
-    puts @selected_code
-    puts @@choosing_a_computer
-    puts @@guessed_combinations
+    print "#{@selected_code}\n"
+    puts "#{@@choosing_a_computer}\n"
+    puts "#{@@guessed_combinations}\n"
+    puts "#{@@guessed_combinations2}\n"
     puts @@guessed_combinations.size
   end
   
