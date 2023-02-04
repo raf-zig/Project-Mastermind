@@ -1,15 +1,4 @@
-class CodeMaker
-  all_colors = ['p','br','o','g','b','y']
-  @computer_selected_colors = all_colors.sample(4) 
-
-  def user_selected_colors
-    puts 'Choose a color combination in the format "o g y b"'
-    @user_selection = gets.strip.split
-  end
-end
-
-
-class CodeBreaker
+class ComputerCodeBreaker
   def initialize(selected_code)
     @selected_code = selected_code
   end
@@ -19,7 +8,7 @@ class CodeBreaker
   @@guessed_combinations = []
   @@guessed_combinations2 = []
 
-  def search_for_a_hidden_combination
+  def search_a_hidden_combination
     12.times do
       @choosing_a_computer = @@all_colors.sample(4)
       @selected_code.each_with_index do |element, index|
@@ -33,7 +22,6 @@ class CodeBreaker
           else
             @@all_colors.map! {|x| x == element ? '*' : element}
           end
-        
         end
       end
       print "#{@selected_code}\n"
@@ -54,6 +42,6 @@ class CodeBreaker
 end
 
 q = CodeBreaker.new(['br','o','g','b'])
-q.search_for_a_hidden_combination
+q.search_a_hidden_combination
  # puts q.debugging
  
