@@ -16,5 +16,11 @@ class UserCodeBreaker
       @@number_of_guessed_colors << element
       puts "Number of guessed colors - #{@@number_of_guessed_colors.length}"
     end
+    if element == @user_option[index] 
+        @@number_of_complete_matches << element
+        puts "Number of complete matches - #{@@number_of_complete_matches.length}"
+    end
   end
+  @@number_of_guessed_colors = []
+  @@number_of_complete_matches = []
 end
