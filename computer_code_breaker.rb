@@ -10,6 +10,7 @@ class ComputerCodeBreaker
 
     12.times do
       @choosing_a_computer = @all_colors.sample(4)
+
       @selected_code.each_with_index do |element, index|
         if @choosing_a_computer.include? (element)
           @number_of_guessed_colors[index] = element
@@ -23,10 +24,17 @@ class ComputerCodeBreaker
           end
         end
       end
+
+      if @all_colors == ['*', '*', '*', '*']
+        puts 'The computer winded'
+        break
+      end
+
       print "#{@selected_code}\n"
       print "#{@choosing_a_computer}\n"
       print "#{@number_of_complete_matches}\n"
     end
+    puts 'The computer lost the game this time.' if @all_colors != ['*', '*', '*', '*']
   end 
 end
 
