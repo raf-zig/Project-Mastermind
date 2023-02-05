@@ -5,36 +5,38 @@ class ComputerCodeBreaker
 
   def search_a_hidden_combination
     @all_colors = ['p','br','o','g','b','y'] 
-    @number_of_guessed_colors  = []
-    @number_of_complete_matches = []
+    @guessed_colors  = []
+    @complete_matches =Array.new(4)
 
     12.times do
       @choosing_a_computer = @all_colors.sample(4)
 
       @selected_code.each_with_index do |element, index|
         if @choosing_a_computer.include? (element)
-          @number_of_guessed_colors[index] = element
+          @guessed_colors[index] = element
         end
         if element == @choosing_a_computer[index] 
-          @number_of_complete_matches[index] = element 
+          @complete_matches[index] = element 
           if @all_colors.size > 4
             @all_colors.delete(element)
           else
-            @all_colors.map! {|x| x == element ? '*' : element}
+           @all_colors.map! {|x| x == element ? '*' : x}
           end
         end
       end
+      print "Your code -                         #{@selected_code.join(', ')}\n"
+      print "A complete match in past attempts - #{@complete_matches.join(', ')}\n"
+      print "Computer code -                     #{@choosing_a_computer.join(', ')}\n\n"
+      
+      sleep(1)
 
-      if @all_colors == ['*', '*', '*', '*']
+      if  @selected_code == @complete_matches
         puts 'The computer winded'
         break
       end
 
-      print "#{@selected_code}\n"
-      print "#{@choosing_a_computer}\n"
-      print "#{@number_of_complete_matches}\n"
     end
-    puts 'The computer lost the game this time.' if @all_colors != ['*', '*', '*', '*']
+    puts 'The computer lost the game this time.' if  @selected_code != @complete_matches
   end 
 end
 
