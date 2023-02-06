@@ -8,13 +8,14 @@ class UserCodeBreaker
     @complete_matches = []
 
     print "Computer code -                             ⭕⭕⭕⭕\n\n"
+    puts 'Enter a possible combination in the format "o g y b"'
 
     12.times do 
-      puts 'Enter a possible combination in the format "o g y b"'
+      
       @user_option = gets.strip.split
 
       @selected_code.each_with_index do |element, index| 
-        if @user_option.include? element
+        if @user_option.include? element and element != @user_option[index] 
           @guessed_colors << element
         end
 
@@ -33,8 +34,7 @@ class UserCodeBreaker
       @guessed_colors = []
       @complete_matches = []
     end 
-    puts "The user lost the game this time." 
-    puts "The hidden combination -                    #{@selected_code.join (' ')}" if @complete_matches.length != 4
+    puts "The user lost the game this time.\nThe hidden combination -                    #{@selected_code.join (' ')}" if @complete_matches.length != 4
   end
 end
   

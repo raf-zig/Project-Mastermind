@@ -23,7 +23,7 @@ class ComputerCodeBreaker
             @all_colors.map! {|x| x == element ? '*' : x}
           end
         else 
-          if @choosing_a_computer.include? (element)
+          if @choosing_a_computer.include? (element)  
             @guessed_colors << element
             @complete_matches[index] = element 
           end
@@ -46,7 +46,6 @@ class ComputerCodeBreaker
   end 
 end
 
-#q = ComputerCodeBreaker.new(['w','y','g','b'])
-#q.search_a_hidden_combination
+
 
  
