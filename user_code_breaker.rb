@@ -1,13 +1,16 @@
+require 'colorize'
 class UserCodeBreaker
   def initialize(selected_code)
     @selected_code = selected_code
   end
 
   def search_for_a_hidden_combination
-      @guessed_colors = []
-      @complete_matches = []
+    @guessed_colors = []
+    @complete_matches = []
 
-    12.times do
+    print "Computer code -                             ⭕⭕⭕⭕\n\n"
+
+    12.times do 
       puts 'Enter a possible combination in the format "o g y b"'
       @user_option = gets.strip.split
 
@@ -24,17 +27,18 @@ class UserCodeBreaker
         end
       end
       break if @complete_matches.length == 4
-      puts "Number of guessed colors - #{@guessed_colors.length}"
-      
-      @guessed_colors.length.times {print '*'}
-
-      puts "Number of complete matches - #{@complete_matches.length}"
+     
+      print 'coincidences -'
+      print "                              #{(@complete_matches.collect{ |i| '⚫'}).join('')}".red
+      print " #{(@guessed_colors.collect{ |i| '⚫'}).join('')}\n".white
       @guessed_colors = []
       @complete_matches = []
     end 
-    puts "The user lost the game this time. The hidden combination - #{@selected_code.join (' ')}" if @complete_matches.length != 4
+    puts "The user lost the game this time." 
+    puts "The hidden combination -                    #{@selected_code.join (' ')}" if @complete_matches.length != 4
   end
 end
- #⭕ 
-q = UserCodeBreaker.new(['br','o','g','b'])
+  
+q = UserCodeBreaker.new(['w','y','g','b'])
 q.search_for_a_hidden_combination
+

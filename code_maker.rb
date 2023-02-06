@@ -1,6 +1,6 @@
 class CodeMaker
   def computer_selected_colors
-    puts @computer_selected_colors = ['p','br','o','g','b','y'].sample(4) 
+    @computer_selected_colors = ['p','w','o','g','b','y'].sample(4) 
   end
   
   def user_selected_colors
@@ -9,5 +9,3 @@ class CodeMaker
   end
 end
 
-w = CodeMaker.new
-puts w.computer_selected_colors

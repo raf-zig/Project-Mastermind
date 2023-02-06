@@ -5,7 +5,7 @@ class ComputerCodeBreaker
   end
 
   def search_a_hidden_combination
-    @all_colors = ["r".red, "w".white, "p".magenta , "g".green, "b".blue, "y".yellow] 
+    @all_colors = ['p','w','o','g','b','y'] 
     @complete_matches =Array.new(4)
     
     print "Your code -                         #{@user_selected_code.join(', ')}\n\n"
@@ -48,7 +48,7 @@ class ComputerCodeBreaker
   end 
 end
 
-q = ComputerCodeBreaker.new(['br','o','g','b'])
+q = ComputerCodeBreaker.new(['w','y','g','b'])
 q.search_a_hidden_combination
 
  
