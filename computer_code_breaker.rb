@@ -1,11 +1,10 @@
-require 'colorize'
 class ComputerCodeBreaker
   def initialize(selected_code)
     @user_selected_code = selected_code
   end
 
   def search_a_hidden_combination
-    @all_colors = ['p','w','o','g','b','y'] 
+    @all_colors = ['r','w','o','g','b','y'] 
     @complete_matches =Array.new(4)
     
     print "Your code -                         #{@user_selected_code.join(', ')}\n\n"
@@ -42,13 +41,12 @@ class ComputerCodeBreaker
         print "The final version of the computer - #{@complete_matches.join(', ')}\n\n"
         break
       end
-
     end
     puts 'The computer lost the game this time.' if  @user_selected_code != @complete_matches
   end 
 end
 
-q = ComputerCodeBreaker.new(['w','y','g','b'])
-q.search_a_hidden_combination
+#q = ComputerCodeBreaker.new(['w','y','g','b'])
+#q.search_a_hidden_combination
 
  

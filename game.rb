@@ -1,1 +1,26 @@
-#
+require_relative 'code_maker.rb'
+require_relative 'user_code_breaker.rb'
+require_relative 'computer_code_breaker.rb'
+
+require 'colorize'
+
+puts "Welcome to Mastermind!\n\nRules:\nYou can choose to be a code MAKER or a code BREAKER. Code maker creates a four color secret combination."
+puts 'Code breaker tries to guess the secret combination. You or computer can make up to 12 guesses. After each guess, there will be up to four clues.'
+print "⚫".red
+puts 'means there is a correct color in the correct position.'
+print "⚫".white
+puts 'means there is a correct color in the wrong position.'
+puts 'Entering "r"  means red, "w" - white, "o" - orange, "g" - green, "b" - blue, "y" - yellow'
+puts 'Good luck!'
+
+
+puts "Choose your role: Press 1 for CODE BREAKER, press 2 for CODE CREATOR. If you don't want to play, press any key"
+role = gets.chomp
+if role == 1
+    code_maker = CodeMaker.new
+    code_maker.computer_selected_colors
+    q = UserCodeBreaker.new(['w','y','g','b'])
+    q.search_for_a_hidden_combination
+end
+#code_maker.user_selected_colors
+

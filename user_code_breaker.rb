@@ -1,4 +1,3 @@
-require 'colorize'
 class UserCodeBreaker
   def initialize(selected_code)
     @selected_code = selected_code
@@ -39,6 +38,6 @@ class UserCodeBreaker
   end
 end
   
-q = UserCodeBreaker.new(['w','y','g','b'])
-q.search_for_a_hidden_combination
+
+
 
