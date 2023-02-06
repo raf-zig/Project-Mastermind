@@ -25,6 +25,9 @@ class UserCodeBreaker
       end
       break if @complete_matches.length == 4
       puts "Number of guessed colors - #{@guessed_colors.length}"
+      
+      @guessed_colors.length.times {print '*'}
+
       puts "Number of complete matches - #{@complete_matches.length}"
       @guessed_colors = []
       @complete_matches = []
@@ -32,6 +35,6 @@ class UserCodeBreaker
     puts "The user lost the game this time. The hidden combination - #{@selected_code.join (' ')}" if @complete_matches.length != 4
   end
 end
-
+ #⭕ 
 q = UserCodeBreaker.new(['br','o','g','b'])
 q.search_for_a_hidden_combination
