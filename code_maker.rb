@@ -1,6 +1,6 @@
 class CodeMaker
   def computer_selected_colors
-    @computer_selected_colors = ['r','w','o','g','b','y'].sample(4) 
+    @computer_selected_colors = %w[r w o g b y].sample(4) 
   end
   
   def user_selected_colors
@@ -8,4 +8,3 @@ class CodeMaker
     @user_selection = gets.strip.split
   end
 end
-
