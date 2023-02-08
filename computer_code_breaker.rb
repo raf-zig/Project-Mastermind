@@ -23,7 +23,6 @@ class ComputerCodeBreaker
         else 
           if @choosing_a_computer.include? element  
             @guessed_colors << element
-            @complete_matches[index] = element 
           end
         end
       end
