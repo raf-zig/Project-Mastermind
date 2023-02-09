@@ -20,7 +20,7 @@ loop do
   code_maker = CodeMaker.new
     if role == '1'
       user_breaker = UserCodeBreaker.new(code_maker.computer_selected_colors)
-      user_breaker.search_for_a_hidden_combination
+      user_breaker.search_a_hidden_combination
     elsif role == '2'
       computer_breaker = ComputerCodeBreaker.new(code_maker.user_selected_colors)
       computer_breaker.search_a_hidden_combination
