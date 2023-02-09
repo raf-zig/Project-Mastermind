@@ -39,7 +39,7 @@ class ComputerCodeBreaker
           #guessed colors in wrong positions
           if @choosing_a_computer.include? element  
             @guessed_colors << element
-            @guessed_colors_to_display << element
+            @complete_matches[index] = element 
           end
         end
       end
