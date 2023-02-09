@@ -9,7 +9,7 @@ puts 'Code breaker tries to guess the secret combination. You or computer can ma
  there will be up to four clues.'
 print "▲".red
 puts 'means there is a correct color in the correct position.'
-print "⚫".white
+print "◉".white
 puts 'means there is a correct color in a wrong position.'
 puts 'Entering "r"  means red, "w" - white, "o" - orange, "g" - green, "b" - blue, "y" - yellow'
 puts 'Good luck!'
