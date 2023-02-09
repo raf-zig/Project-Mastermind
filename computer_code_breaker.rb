@@ -46,7 +46,7 @@ class ComputerCodeBreaker
       
       print "Computer code -                     #{@choosing_a_computer.join(', ')}\n"
       print 'coincidences -'
-      print "                       #{(@matching_positions.collect{ |i| '▲' }).join('')}".red
+      print "                       #{(@matching_positions.collect{ |i| '◉' }).join('')}".red
       print " #{(@guessed_colors_to_display.map{ |i| '◉' }).join('')}\n".white
       sleep(1)
 
