@@ -1,3 +1,4 @@
+# A computer or user selects the colors for a cipher("r"-red, "w"-white, "o"-orange, "g"-green, "b"-blue, "y"-yellow).
 class CodeMaker
   def computer_selected_colors
     @computer_selected_colors = %w[r w o g b y].sample(4) 

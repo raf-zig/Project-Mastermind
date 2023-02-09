@@ -1,9 +1,10 @@
+#A user guesses a cipher created by a computer
 class UserCodeBreaker
-  def initialize(selected_code)
-    @selected_code = selected_code
+  def initialize(cipher_selected_by_a_computer)
+    @selected_code = cipher_selected_by_a_computer
   end
 
-  def search_for_a_hidden_combination
+  def search_a_hidden_combination
     @guessed_colors = []
     @complete_matches = []
 
@@ -27,7 +28,7 @@ class UserCodeBreaker
       
       break if @complete_matches.length == 4
       print 'coincidences -'
-      print "                              #{(@complete_matches.collect{|i| '⚫'}).join('')}".red
+      print "                              #{(@complete_matches.collect{|i| '▲'}).join('')}".red
       print " #{(@guessed_colors.collect{|i| '⚫'}).join('')}\n".white
       @guessed_colors = []
       @complete_matches = []
