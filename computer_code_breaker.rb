@@ -39,7 +39,7 @@ class ComputerCodeBreaker
           #Guessed colors in wrong positions.
           if @choosing_a_computer.include? element  
             @guessed_colors << element
-            @complete_matches[index] = element 
+            @guessed_colors_to_display = [] 
           end
         end
       end
@@ -47,7 +47,7 @@ class ComputerCodeBreaker
       print "Computer code -                     #{@choosing_a_computer.join(', ')}\n"
       print 'coincidences -'
       print "                       #{(@matching_positions.collect{ |i| '▲' }).join('')}".red
-      print " #{(@guessed_colors_to_display.map{ |i| '⚫' }).join('')}\n".white
+      print " #{(@guessed_colors_to_display.map{ |i| '◉' }).join('')}\n".white
       sleep(1)
 
       if @user_selected_code == @complete_matches
