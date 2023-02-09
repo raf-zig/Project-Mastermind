@@ -1,4 +1,4 @@
-#A computer guesses a cipher created by a user
+#A computer guesses a cipher created by a user.
 class ComputerCodeBreaker
   def initialize(cipher_selected_by_a_user)
     @user_selected_code = cipher_selected_by_a_user
@@ -8,7 +8,7 @@ class ComputerCodeBreaker
     @all_colors = %w[r w o g b y]
     @complete_matches = Array.new(4)
     print "Your code -                         #{@user_selected_code.join(', ')}\n\n"
-    #The array is created in the Array.new(4) format in order to know the indexes of the guessed colors in the wrong positions
+    #The array is created in the Array.new(4) format in order to know the indexes of the guessed colors in the wrong positions.
     @guessed_colors = Array.new(4)
     12.times do
       @choosing_a_computer = @all_colors.sample(4)
@@ -19,9 +19,9 @@ class ComputerCodeBreaker
         end
       end
       
-      #The array is reset to zero for a new search
+      #The array is reset to zero for a new search.
       @guessed_colors = Array.new(4)
-      #Another array of guessed colors to display
+      #Another array of guessed colors to display.
       @guessed_colors_to_display = []
       @matching_positions = []
       @user_selected_code.each_with_index do |element, index|
@@ -32,11 +32,11 @@ class ComputerCodeBreaker
           if @all_colors.size > 4
             @all_colors.delete(element)
           else
-          #or replaced with a "*" sign to keep the number of items selected by the computer
+          #or replaced with a "*" sign to keep the number of items selected by the computer.
             @all_colors.map! {|x| x == element ? '*' : x}
           end
         else 
-          #guessed colors in wrong positions
+          #Guessed colors in wrong positions.
           if @choosing_a_computer.include? element  
             @guessed_colors << element
             @complete_matches[index] = element 

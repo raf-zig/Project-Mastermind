@@ -1,4 +1,4 @@
-#The game starts from this file
+#The game starts from this file.
 require_relative 'code_maker.rb'
 require_relative 'user_code_breaker.rb'
 require_relative 'computer_code_breaker.rb'

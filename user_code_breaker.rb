@@ -1,4 +1,4 @@
-#A user guesses a cipher created by a computer
+#A user guesses a cipher created by a computer.
 class UserCodeBreaker
   def initialize(cipher_selected_by_a_computer)
     @selected_code = cipher_selected_by_a_computer
