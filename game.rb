@@ -8,9 +8,9 @@ a four color secret combination. The colors can not repeat in the secret combina
 puts 'Code breaker tries to guess the secret combination. You or computer can make up to 12 guesses.After each guess,
  there will be up to four clues.'
 print "◉".red
-puts 'means there is a correct color in the correct position.'
+puts '- means there is a correct color in the correct position.'
 print "◉".white
-puts 'means there is a correct color in a wrong position.'
+puts '- means there is a correct color in a wrong position.'
 puts 'Entering "r"  means red, "w" - white, "o" - orange, "g" - green, "b" - blue, "y" - yellow'
 puts 'Good luck!'
 
