@@ -11,7 +11,6 @@ class ComputerCodeBreaker
     
     12.times do
       @choosing_a_computer = @all_colors.sample(4)
-      
       @guessed_colors_to_display = []
       @matching_positions_to_display = [] 
 
@@ -30,6 +29,7 @@ class ComputerCodeBreaker
           end
         end
       end
+      
         print "Computer code -                     #{@choosing_a_computer.join(', ')}\n"
         print 'coincidences -'
         print "                       #{(@matching_positions_to_display.collect{ |i| '◉' }).join('')}".red
