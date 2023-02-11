@@ -30,18 +30,18 @@ class ComputerCodeBreaker
         end
       end
       
-        print "Computer code -                     #{@choosing_a_computer.join(', ')}\n"
-        print 'coincidences -'
-        print "                       #{(@matching_positions_to_display.collect{ |i| '◉' }).join('')}".red
-        print " #{(@guessed_colors_to_display.map{ |i| '◉' }).join('')}\n".white
-        sleep(1)
+      print "Computer code -                     #{@choosing_a_computer.join(', ')}\n"
+      print 'coincidences -'
+      print "                       #{(@matching_positions_to_display.collect{ |i| '◉' }).join('')}".red
+      print " #{(@guessed_colors_to_display.map{ |i| '◉' }).join('')}\n".white
+      sleep(1)
 
-        if @user_selected_code == @complete_matches
-          puts 'The computer winded'
-          print "The final version of the computer - #{@complete_matches.join(', ')}\n\n"
-          break
-        end
+      if @user_selected_code == @complete_matches
+        puts 'The computer winded'
+        print "The final version of the computer - #{@complete_matches.join(', ')}\n\n"
+        break
       end
+    end
     puts "The computer lost the game this time."
     puts "The final version of the computer -   #{@complete_matches.join(', ')}" if @user_selected_code != @complete_matches
   end 
