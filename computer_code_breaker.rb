@@ -42,8 +42,7 @@ class ComputerCodeBreaker
         break
       end
     end
-    puts "The computer lost the game this time."
-    puts "The final version of the computer -   #{@complete_matches.join(', ')}" if @user_selected_code != @complete_matches
+    puts "The computer lost with the version -  #{@complete_matches.join(', ')}" if @user_selected_code != @complete_matches
   end 
 end
 
