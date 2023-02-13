@@ -28,8 +28,8 @@ class UserCodeBreaker
       
       break if @complete_matches.length == 4
       print 'coincidences -'
-      print "                              #{(@complete_matches.collect{|i| '▲'}).join('')}".red
-      print " #{(@guessed_colors.collect{|i| '⚫'}).join('')}\n".white
+      print "                              #{(@complete_matches.collect{|i| '◉'}).join('')}".red
+      print " #{(@guessed_colors.collect{|i| '◉'}).join('')}\n".white
       @guessed_colors = []
       @complete_matches = []
     end 
