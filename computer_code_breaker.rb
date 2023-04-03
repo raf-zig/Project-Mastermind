@@ -22,7 +22,7 @@ class ComputerCodeBreaker
           if @all_colors.size > 4
             @all_colors.delete(element)
           else
-            @all_colors.map! {|x| x == element ? '*' : x}
+            @all_colors.map! { |x| x == element ? '*' : x }
           end
         else 
           if @choosing_a_computer.include? element  
@@ -32,8 +32,8 @@ class ComputerCodeBreaker
       end
       print "Computer code -                     #{@choosing_a_computer.join(', ')}\n"
       print 'coincidences -'
-      print "                       #{(@matching_positions_to_display.collect{ '◉' }).join('')}".red
-      print " #{(@guessed_colors_to_display.map{ '◉' }).join('')}\n".white
+      print "                       #{(@matching_positions_to_display.collect { '◉' }).join('')}".red
+      print " #{(@guessed_colors_to_display.map { '◉' }).join('')}\n".white
       sleep(1)
 
       if @user_selected_code == @complete_matches
