@@ -32,8 +32,8 @@ class ComputerCodeBreaker
       end
       print "Computer code -                     #{@choosing_a_computer.join(', ')}\n"
       print 'coincidences -'
-      print "                       #{(@matching_positions_to_display.collect{ |i| '◉' }).join('')}".red
-      print " #{(@guessed_colors_to_display.map{ |i| '◉' }).join('')}\n".white
+      print "                       #{(@matching_positions_to_display.collect{ '◉' }).join('')}".red
+      print " #{(@guessed_colors_to_display.map{ '◉' }).join('')}\n".white
       sleep(1)
 
       if @user_selected_code == @complete_matches
@@ -42,7 +42,7 @@ class ComputerCodeBreaker
         break
       end
     end
-    puts "The final version of the computer.\hThe computer lost the game this time -   #{@complete_matches.join(', ')}" if @user_selected_code != @complete_matches
+    puts "The computer lost with the version -  #{@complete_matches.join(', ')}" if @user_selected_code != @complete_matches
   end 
 end
 
